@@ -36,6 +36,10 @@ export default function AddSavings() {
       elevation={3}
       style={{
         background: 'linear-gradient(45deg, #1de9b6 30%, #e6ee9c 90%)',
+        width: '85%',
+        margin: '0 auto',
+        float: 'none',
+        marginBottom: '10px',
       }}
     >
       <div className="card-body" style={{ alignItems: 'center' }}>

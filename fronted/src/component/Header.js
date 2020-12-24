@@ -1,11 +1,7 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export default function ButtonAppBar() {
   const headerLinks = [
@@ -42,35 +38,43 @@ export default function ButtonAppBar() {
     });
 
   return (
-    <div style={{ flexGrow: 1 }}>
-      <AppBar
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style={{ background: '#1de9b6' }}
+    >
+      <Typography
         style={{
-          background: '#1de9b6',
+          flexGrow: 1,
+          fontSize: '1.5em',
+          fontWeight: '1em',
+          color: 'white',
         }}
       >
-        <Toolbar>
-          <Typography
-            style={{
-              flexGrow: 1,
-              fontSize: '1.5em',
-              fontWeight: '1em',
-              color: 'white',
-            }}
-          >
-            <Link
-              style={{
-                textTransform: 'none',
-                color: 'white',
-                textDecoration: 'none',
-              }}
-              to="/"
-            >
-              Home
-            </Link>
-          </Typography>
-          {headerLinks}
-        </Toolbar>
-      </AppBar>
-    </div>
+        <Link
+          style={{
+            textTransform: 'none',
+            color: 'white',
+            textDecoration: 'none',
+          }}
+          to="/"
+        >
+          Home
+        </Link>
+      </Typography>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <span class="navbar-text">{headerLinks}</span>
+      </div>
+    </nav>
   );
 }

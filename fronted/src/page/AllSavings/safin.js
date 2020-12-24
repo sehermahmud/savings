@@ -39,50 +39,48 @@ export default function AllSavings() {
       </thead>
       <tbody>
         {savings &&
-          savings.map(
-            ({ _id, name, amount, date, month, year, description }) => {
-              return (
-                <tr key={_id}>
-                  <td>#</td>
-                  <td>{name}</td>
-                  <td>{amount}</td>
-                  <td>
-                    <div>
-                      <Link
-                        className="text-decoration-none"
-                        to={'/safinDetials/' + _id}
-                      >
-                        <button
-                          className="btn btn-info"
-                          style={{ margin: '0.2em' }}
-                        >
-                          Details
-                        </button>
-                      </Link>
-                      <Link
-                        className="text-decoration-none"
-                        to={'/editsafin/' + _id}
-                      >
-                        <button
-                          className="btn btn-info"
-                          style={{ margin: '0.2em' }}
-                        >
-                          Edit
-                        </button>
-                      </Link>
+          savings.map(({ _id, name, amount }) => {
+            return (
+              <tr key={_id}>
+                <td>#</td>
+                <td>{name}</td>
+                <td>{amount}</td>
+                <td>
+                  <div>
+                    <Link
+                      className="text-decoration-none"
+                      to={'/safinDetials/' + _id}
+                    >
                       <button
-                        className="btn btn-danger"
+                        className="btn btn-info"
                         style={{ margin: '0.2em' }}
-                        onClick={() => removeData(_id)}
                       >
-                        Delete
+                        Details
                       </button>
-                    </div>
-                  </td>
-                </tr>
-              );
-            }
-          )}
+                    </Link>
+                    <Link
+                      className="text-decoration-none"
+                      to={'/editsafin/' + _id}
+                    >
+                      <button
+                        className="btn btn-info"
+                        style={{ margin: '0.2em' }}
+                      >
+                        Edit
+                      </button>
+                    </Link>
+                    <button
+                      className="btn btn-danger"
+                      style={{ margin: '0.2em' }}
+                      onClick={() => removeData(_id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            );
+          })}
         <tr>
           <td></td>
           <td>Total:</td>
@@ -90,7 +88,6 @@ export default function AllSavings() {
             savings.map(({ _id, amount }) => {
               return <td></td>;
             })}
-          <td></td>
           <td></td>
         </tr>
       </tbody>

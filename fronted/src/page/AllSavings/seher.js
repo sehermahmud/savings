@@ -24,23 +24,23 @@ export default function AllSavings() {
   };
 
   return (
-    <table
-      class="table table-striped table-bordered"
-      id="savings-list"
-      width="100%"
-    >
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        {savings &&
-          savings.map(
-            ({ _id, name, amount, date, month, year, description }) => {
+    <div>
+      <table
+        class="table table-striped table-bordered"
+        id="savings-list"
+        width="100%"
+      >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {savings &&
+            savings.map(({ _id, name, amount }) => {
               return (
                 <tr key={_id}>
                   <td>#</td>
@@ -81,18 +81,18 @@ export default function AllSavings() {
                   </td>
                 </tr>
               );
-            }
-          )}
-        <tr>
-          <td></td>
-          <td>Total:</td>
-          {savings &&
-            savings.map(({ _id, amount }) => {
-              return <td></td>;
             })}
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+          <tr>
+            <td></td>
+            <td>Total:</td>
+            {savings &&
+              savings.map(({ _id, amount }) => {
+                return <td></td>;
+              })}
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 }

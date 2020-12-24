@@ -29,7 +29,15 @@ export default class savingDetails extends Component {
 
     return (
       <div>
-        <Card style={{ margin: '0.5em' }}>
+        <Card
+          style={{
+            margin: '0.5em',
+            width: '90%',
+            margin: '0 auto',
+            float: 'none',
+            marginBottom: '10px',
+          }}
+        >
           <CardContent>
             <Typography variant="h4" style={{ textAlign: 'center' }}>
               {name}, {amount}

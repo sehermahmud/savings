@@ -21,8 +21,6 @@ function App() {
     <Router>
       <Header />
       <br />
-      <br />
-      <br />
       <Switch>
         <Route exact path="/" component={Home} />
 
